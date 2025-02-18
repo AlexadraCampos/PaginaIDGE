@@ -16,14 +16,10 @@ body{
 
 
 .btn:hover {
-    background: #5a1118;
+    background: #11165a;
     color: #fff;
 }
 
-.bnt:checked {
-    background-color: #842029;
-    border-color: #842029;
-}
 
 .text-center{
 	color:#fff;	
@@ -39,7 +35,6 @@ body{
 	margin-bottom:25px;
 }
 .input-container label{
-	position:absolute;
 	top:0px;
 	left:0px;
 	font-size:16px;
