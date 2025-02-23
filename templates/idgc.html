@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>IDGC</title>
+    <link rel="icon" type="image/png" href="../static/css/icons/icon IDGC 2025-02-14 164340.jpg">
+    
+</head>
+<body>
+    <div class="uf-form-signin">
+        <div class="text-center">
+          <img src="../static/css/icons/icon IDGC 2025-02-14 164340.jpg" alt="logo-IDGC" width="100" height="100">
+        <h1>ID Global <span>Checker</span></h1>
+        </div>
+        <!-- Caixa de texto Nome e mensagem -->
+        <form action="/validar"  method="POST">
+          <div class="input-container">
+            <span class="input-group-text fa fa-user"></span> 
+            <label class="form-control" for="chave">Digite o número do documento:</label><br> 
+            <input type="text" id="chave" name="chave" required><br><br>
+            <!-- listas de opções  -->
+            <label class="form-control" for="categoria">Escolha uma categoria:</label><br>
+            <select id="categoria" name="categoria"><br><br>
+              <option value="CPF">CPF</option>
+              <option value="CNPJ">CNPJ</option>
+              <option value="DNI">DNI</option>
+              <option value="CUIL">CUIL</option>
+            </select>
+          </div>
+
+          <div class="input-container">
+            <span class="input-group-text fa fa-lock"></span> 
+            <input type="submit" class="btn" value="Validar">
+          </div>
+
+        
+        </form>
+
+       
+        <!-- Parte dos Dados -->
+        <h2>Validador</h2>
+        <p><strong>CPF:</strong> {{ identificador }}</p>
+        {% if valido == true %}
+        <p>Válido</p>
+        {% elif valido == false %}
+        <p>Inválido</p>
+        {% endif %}
+
+ 
+        
+
+       
+    </div>
+  
+</body>
+</html>

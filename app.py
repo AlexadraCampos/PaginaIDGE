@@ -18,9 +18,9 @@ def fale_conosco():
     return render_template('index.html')
 
 # Rota frontend
-@app.route("/formulario/")
+@app.route("/idgc/")
 def chamar_formulario():
-    return render_template('formulario.html')
+    return render_template('idgc.html')
 
 # Rota para validar cpf via POST
 @app.route("/validar", methods=["POST"])
