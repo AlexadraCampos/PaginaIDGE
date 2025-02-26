@@ -38,17 +38,7 @@ def validar():
     elif categoria == "CUIL":
         valido = idgc.Argentina_CUIL_Validator(identificador)
 
-    return render_template('formulario.html', identificador=identificador, valido=valido)
-
-
-# @app.route("/Validar", methods =["POST"])
-# def enviar_formulario():
-    
-#     nome = request.form["nome"]
-#     mensagem = request.form["mensagem"]
-
-
-#     return render_template('formulario.html', nome=nome, mensagem=mensagem)
+    return render_template('idgc.html', identificador=identificador, valido=valido, categoria=categoria)
 
 
 # Inicio do servidor flask

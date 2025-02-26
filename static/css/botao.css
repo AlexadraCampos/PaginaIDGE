@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.valido{
+  background: #8ecf88;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border-radius: 4px;
+  border-left: 8px solid #1fac12;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.alert.showAlert{
+  opacity: 1;
+  pointer-events: auto;
+}
+.alert.show{
+  animation: show_slide 1s ease forwards;
+}
+@keyframes show_slide {
+  0%{
+    transform: translateX(100%);
+  }
+  40%{
+    transform: translateX(-10%);
+  }
+  80%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-10px);
+  }
+}
+.alert.hide{
+  animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+  0%{
+    transform: translateX(-10px);
+  }
+  40%{
+    transform: translateX(0%);
+  }
+  80%{
+    transform: translateX(-10%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+/* alerta valido */
+.valido .fa-check-circle{
+  position: absolute;
+  left: 10px;
+  top: 46%;
+  transform: translateY(-50%);
+  color: #2da129;
+ 
+}
+
+.valido .msg{
+  padding: 1 20px;
+  font-size: 18px;
+  color: #1c5c1c;
+}
+
+.valido .close-btn{
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2da129;
+  padding: 20px 18px;
+  cursor: pointer;
+}
+
+.valido .close-btn .fas{
+  color: #22ce00;
+  font-size: 22px;
+  line-height: 40px;
+}
+
+/* alerta invalido */
+.invalido{
+  background: #ff8f80;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border-radius: 4px;
+  border-left: 8px solid #ce0000;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* texto do alert */
+.invalido .fa-exclamation-circle{
+  position: absolute;
+  left: 9px;
+  top: 46%;
+  transform: translateY(-50%);
+  color: #b82222;
+ 
+}
+
+.invalido .close-btn{
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ce0000;
+  padding:20px 18px;
+  cursor: pointer;
+}
+
+.invalido .close-btn .fas{
+  color: #ff8f80;
+  font-size: 22px;
+  line-height: 40px;
+}
