@@ -4,20 +4,9 @@ import re
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return render_template("hello_there.html")  # Aqui não precisa de 'name'
-
-@app.route("/hello/<name>")
-def hello_there(name):
-    return render_template("hello_there.html", name=name)  # Aqui passamos 'name' para o template
- 
-
-@app.route("/portifolio/")
-def fale_conosco():
-    return render_template('index.html')
 
 # Rota frontend
+@app.route("/")
 @app.route("/idgc/")
 def chamar_formulario():
     return render_template('idgc.html')
