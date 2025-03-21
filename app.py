@@ -39,7 +39,7 @@ def validar():
         valido = idgc.Argentina_CUIL_Validator(identificador)
     elif categoria =="CUIT":
         valido = idgc.Argentina_CUIT_Validator(identificador)
-     elif categoria =="SSN":
+    elif categoria =="SSN":
         valido = idgc.US_SSN_Validator(identificador)
 
 
