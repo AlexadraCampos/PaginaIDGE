@@ -32,12 +32,12 @@
             <!-- listas de opções  -->
             <label class="form-control" for="categoria">Escolha uma categoria:</label><br>
             <select id="categoria" name="categoria"><br><br>
-              <option value="CPF">CPF</option>
-              <option value="CNPJ">CNPJ</option>
-              <option value="DNI">DNI</option>
-              <option value="CUIL">CUIL</option>
-              <option value="CUIT">CUIT</option>
-              <option value="SSN">SSN</option>
+              <option value="CPF" {% if categoria=="CPF" %} selected {% endif %}>CPF</option>
+              <option value="CNPJ"  {% if categoria=="CNPJ" %} selected {% endif %}>CNPJ</option>
+              <option value="DNI" {% if categoria=="DNI" %} selected {% endif %}>DNI</option>
+              <option value="CUIL" {% if categoria=="CUIL" %} selected {% endif %}>CUIL</option>
+              <option value="CUIT" {% if categoria=="CUIT" %} selected {% endif %}>CUIT</option>
+              <option value="SSN" {% if categoria=="SSN" %} selected {% endif %}>SSN</option>
             </select>
           </div>
 
