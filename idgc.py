@@ -63,6 +63,23 @@ class IDGC:
             digito_verificador = 9
         
         return int(cuil[-1]) == digito_verificador
+    
+
+    def Argentina_CUIT_Validator(self, cuit: str) -> bool:
+        cuit = re.sub(r'\D', '', cuit)
+        if not cuit.isdigit() or len(cuit) != 11:
+            print("CUIT deve conter 11 dígitos numéricos!")
+            return False
+        
+        coeficientes = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2]
+        soma = sum(int(cuit[i]) * coeficientes[i] for i in range(10))
+        digito_verificador = 11 - (soma % 11)
+        if digito_verificador == 11:
+            digito_verificador = 0
+        elif digito_verificador == 10:
+            digito_verificador = 9
+        
+        return int(cuit[-1]) == digito_verificador
 
     def Argentina_CUIT_Validator(self, cuit: str) -> bool:
         cuit = re.sub(r'\D', '', cuit)
