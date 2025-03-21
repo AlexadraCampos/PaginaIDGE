@@ -64,6 +64,50 @@ class IDGC:
         
         return int(cuil[-1]) == digito_verificador
 
+    def Argentina_CUIT_Validator(self, cuit: str) -> bool:
+        cuit = re.sub(r'\D', '', cuit)
+        if not cuit.isdigit() or len(cuit) != 11:
+            print("CUIT deve conter 11 dígitos numéricos!")
+            return False
+        
+        coeficientes = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2]
+        soma = sum(int(cuit[i]) * coeficientes[i] for i in range(10))
+        digito_verificador = 11 - (soma % 11)
+        if digito_verificador == 11:
+            digito_verificador = 0
+        elif digito_verificador == 10:
+            digito_verificador = 9
+        
+        return int(cuit[-1]) == digito_verificador
+
+    #Validador do SSN
+    def US_SSN_Validator(self, ssn: str) -> bool:
+        pattern = re.compile(r"^\d{3}-\d{2}-\d{4}$|^\d{9}$")   
+        if not pattern.match(ssn):
+            return False
+
+        # Verifica os três primeiros dígitos
+        if ssn[:3] in ["000", "666"] or ssn.startswith("9"):
+            return False
+        
+        # Verifica se os dígitos do meio (posição 4 e 5) são "00"
+        if ssn[3:5] == "00":
+            return False
+        
+        # Verifica se os últimos quatro dígitos são "0000"
+        if ssn[5:] == "0000":
+            print("Número inválido!")
+            return False
+        
+        # Se passou todas as verificações
+        print("Número Válido!")
+        return True
+
+
+            
+
+
+
 # Testando a validação
 jif = IDGC()
 cpf = "306.559.490-03"

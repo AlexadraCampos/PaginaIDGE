@@ -37,10 +37,18 @@ def validar():
         valido = idgc.Argentina_DNI_Validator(identificador)
     elif categoria == "CUIL":
         valido = idgc.Argentina_CUIL_Validator(identificador)
+    elif categoria =="CUIT":
+        valido = idgc.Argentina_CUIT_Validator(identificador)
+     elif categoria =="SSN":
+        valido = idgc.US_SSN_Validator(identificador)
+
+
+
+
+
 
     return render_template('idgc.html', identificador=identificador, valido=valido, categoria=categoria)
-
-
+    
 # Inicio do servidor flask
 if __name__ == "__main__":
     app.run(debug=True)
